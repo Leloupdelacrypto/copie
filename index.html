@@ -1,25 +1,303 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Louann Cousseau - Diététicienne Nutritionniste</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cabinet de Diététique — Modèle proche</title>
+  <meta name="description" content="Site vitrine statique : approche, accompagnements, déroulé des consultations, avis et contact. Inspiré de la structure du site demandé, sans contenus protégés." />
+  <meta name="theme-color" content="#6b7a62" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
 </head>
 <body>
-  <header>
-    <h1>Louann Cousseau</h1>
-    <p>Diététicienne - Nutritionniste</p>
+  <a class="skip-link" href="#main">Aller au contenu</a>
+
+  <header class="site-header" id="accueil">
+    <div class="top-banner">
+      <div class="container">
+        <p>Consultations en cabinet &amp; en visio • Du lundi au samedi</p>
+        <div class="top-banner__cta">
+          <a href="tel:+33600000000" class="top-link">06 00 00 00 00</a>
+          <a href="#contact" class="top-link">Prendre rendez-vous</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="navbar" role="navigation" aria-label="Navigation principale">
+        <a class="brand" href="#accueil" aria-label="Accueil">
+          <img src="assets/logo.svg" alt="Logo du cabinet" />
+          <span>
+            <strong>Nom du Cabinet</strong>
+            <small>Diététicien·ne — Nutritionniste</small>
+          </span>
+        </a>
+
+        <button class="nav-toggle" aria-expanded="false" aria-controls="primary-menu">
+          <span class="sr-only">Ouvrir le menu</span>
+          <span></span><span></span><span></span>
+        </button>
+
+        <nav id="primary-menu" class="nav-links">
+          <a href="#accueil">Accueil</a>
+          <a href="#approche">Approche</a>
+          <a href="#services">Accompagnements</a>
+          <a href="#consultations">Consultations</a>
+          <a href="#temoignages">Avis</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </div>
+
+    <div class="hero" role="presentation">
+      <div class="container hero__content">
+        <p class="hero__subtitle">Nutrition &amp; bien-être</p>
+        <h1 class="hero__title">Une approche bienveillante<br/>et personnalisée</h1>
+        <p class="hero__text">Des conseils concrets et adaptés à votre quotidien pour retrouver des habitudes alimentaires sereines.</p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#contact">Prendre rendez-vous</a>
+          <a class="btn btn--ghost" href="#services">Découvrir les accompagnements</a>
+        </div>
+      </div>
+    </div>
   </header>
-  <main>
-    <section>
-      <h2>Accueil</h2>
-      <p>Contenu d'accueil du site reconstruit.</p>
+
+  <main id="main">
+    <section class="highlights" aria-labelledby="highlights-title">
+      <div class="container">
+        <h2 id="highlights-title" class="section-title">Pourquoi consulter&nbsp;?</h2>
+        <div class="highlight-grid">
+          <article class="highlight-card">
+            <div class="highlight-icon" aria-hidden="true">🍽️</div>
+            <h3>Relation apaisée</h3>
+            <p>Progresser sans restriction, avec une écoute attentive et des objectifs réalistes.</p>
+          </article>
+          <article class="highlight-card">
+            <div class="highlight-icon" aria-hidden="true">🤝</div>
+            <h3>Suivi humain</h3>
+            <p>Un cadre clair, des échanges réguliers et un accompagnement motivant.</p>
+          </article>
+          <article class="highlight-card">
+            <div class="highlight-icon" aria-hidden="true">🎯</div>
+            <h3>Résultats durables</h3>
+            <p>Des outils simples pour ancrer de nouvelles habitudes sur le long terme.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="apropos" aria-labelledby="about-title">
+      <div class="container about__wrapper">
+        <div class="about__image" role="presentation">
+          <img src="https://source.unsplash.com/800x800/?nutritionist,portrait" alt="Illustration du cabinet" />
+        </div>
+        <div class="about__content">
+          <h2 id="about-title" class="section-title">À propos</h2>
+          <p class="section-subtitle">Diététique, pédagogie et respect du rythme de chacun·e</p>
+          <p>Le cabinet accueille adultes, adolescent·es et enfants. Les séances s’appuient sur l’écoute active et la co‑construction d’un plan adapté à vos contraintes.</p>
+          <p>Objectif&nbsp;: retrouver une alimentation variée et sereine, que ce soit pour du confort digestif, un rééquilibrage ou un suivi en lien avec une pathologie.</p>
+          <ul class="about__list">
+            <li>Consultations en cabinet et en visio</li>
+            <li>Supports et plans personnalisés</li>
+            <li>Suivi régulier et ressources pratiques</li>
+          </ul>
+          <a class="btn btn--primary" href="#contact">Échanger</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="approach" id="approche" aria-labelledby="approach-title">
+      <div class="container">
+        <div class="section-intro">
+          <h2 id="approach-title" class="section-title">Approche</h2>
+          <p class="section-subtitle">Un parcours en trois étapes</p>
+        </div>
+        <div class="steps">
+          <article class="step">
+            <span class="step__number">01</span>
+            <h3>Comprendre</h3>
+            <p>Faire le point sur vos habitudes, votre contexte de vie et vos objectifs.</p>
+          </article>
+          <article class="step">
+            <span class="step__number">02</span>
+            <h3>Co‑construire</h3>
+            <p>Élaborer un plan pratico‑pratique, ajusté à votre quotidien.</p>
+          </article>
+          <article class="step">
+            <span class="step__number">03</span>
+            <h3>Ajuster</h3>
+            <p>Faire évoluer le suivi, lever les freins et consolider les progrès.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="services" aria-labelledby="services-title">
+      <div class="container">
+        <div class="section-intro">
+          <h2 id="services-title" class="section-title">Accompagnements</h2>
+          <p class="section-subtitle">Des consultations adaptées à chaque besoin</p>
+        </div>
+        <div class="service-grid">
+          <article class="service-card">
+            <img src="https://source.unsplash.com/1200x800/?balanced,meal,healthy" alt="Rééquilibrage alimentaire" />
+            <div class="service-card__content">
+              <h3>Rééquilibrage</h3>
+              <ul>
+                <li>Évaluation initiale</li>
+                <li>Conseils personnalisés</li>
+                <li>Suivi motivant</li>
+              </ul>
+            </div>
+          </article>
+          <article class="service-card">
+            <img src="https://source.unsplash.com/1200x800/?digestive,health,food" alt="Confort digestif" />
+            <div class="service-card__content">
+              <h3>Confort digestif</h3>
+              <ul>
+                <li>Adaptations ciblées</li>
+                <li>Supports pratiques</li>
+                <li>Points réguliers</li>
+              </ul>
+            </div>
+          </article>
+          <article class="service-card">
+            <img src="https://source.unsplash.com/1200x800/?running,fitness,nutrition" alt="Nutrition du sportif" />
+            <div class="service-card__content">
+              <h3>Sport & performance</h3>
+              <ul>
+                <li>Programme individualisé</li>
+                <li>Avant / pendant / après l’effort</li>
+                <li>Suivi des objectifs</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="consultations" id="consultations" aria-labelledby="consultations-title">
+      <div class="container consultations__wrapper">
+        <div class="consultations__content">
+          <h2 id="consultations-title" class="section-title">Déroulé des consultations</h2>
+          <p class="section-subtitle">Des rendez‑vous cadrés pour progresser sereinement</p>
+          <div class="timeline">
+            <article class="timeline__item">
+              <h3>Bilan initial — 1h</h3>
+              <p>Analyse du contexte, des habitudes et des objectifs.</p>
+            </article>
+            <article class="timeline__item">
+              <h3>Plan personnalisé</h3>
+              <p>Conseils concrets, supports et idées‑menus.</p>
+            </article>
+            <article class="timeline__item">
+              <h3>Suivis — 30&nbsp;min</h3>
+              <p>Mesure des progrès et ajustements continus.</p>
+            </article>
+          </div>
+          <a class="btn btn--ghost" href="#contact">Demander les tarifs</a>
+        </div>
+        <div class="consultations__image" role="presentation">
+          <img src="https://source.unsplash.com/1200x800/?doctor,office,nutrition" alt="Photo illustrative de consultation" />
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials" id="temoignages" aria-labelledby="testimonials-title">
+      <div class="container">
+        <div class="section-intro">
+          <h2 id="testimonials-title" class="section-title">Avis</h2>
+          <p class="section-subtitle">Exemples fictifs</p>
+        </div>
+        <div class="testimonials__slider" role="region" aria-live="polite">
+          <button class="slider__control" data-direction="prev" aria-label="Témoignage précédent">&#10094;</button>
+          <div class="slider__track">
+            <figure class="testimonial">
+              <blockquote>« Un accompagnement clair et motivant. »</blockquote>
+              <figcaption>Élodie — Bien‑être</figcaption>
+            </figure>
+            <figure class="testimonial">
+              <blockquote>« Des conseils simples et applicables. »</blockquote>
+              <figcaption>Marc — Sport</figcaption>
+            </figure>
+            <figure class="testimonial">
+              <blockquote>« J’ai retrouvé des repères durables. »</blockquote>
+              <figcaption>Sarah — Confort digestif</figcaption>
+            </figure>
+          </div>
+          <button class="slider__control" data-direction="next" aria-label="Témoignage suivant">&#10095;</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" aria-labelledby="cta-title">
+      <div class="container cta__wrapper">
+        <div>
+          <h2 id="cta-title">Envie d’échanger&nbsp;?</h2>
+          <p>Planifiez un point découverte de 15 minutes pour définir vos objectifs.</p>
+        </div>
+        <a class="btn btn--primary" href="mailto:contact@exemple.fr">Contact direct</a>
+      </div>
+    </section>
+
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <div class="container contact__grid">
+        <div>
+          <h2 id="contact-title" class="section-title">Contact & informations</h2>
+          <p class="section-subtitle">Adresse d’exemple — 62000 Ville</p>
+          <ul class="contact__list">
+            <li><span class="contact__icon" aria-hidden="true">📞</span> <a href="tel:+33600000000">06 00 00 00 00</a></li>
+            <li><span class="contact__icon" aria-hidden="true">✉️</span> <a href="mailto:contact@exemple.fr">contact@exemple.fr</a></li>
+            <li><span class="contact__icon" aria-hidden="true">📍</span> <span>12 rue Exemple, 62000 Ville</span></li>
+          </ul>
+          <p class="contact__info">Accès transports & stationnement à proximité.</p>
+        </div>
+        <form class="contact__form">
+          <div class="form-group">
+            <label for="name">Nom complet</label>
+            <input id="name" name="name" type="text" placeholder="Votre nom" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Adresse e-mail</label>
+            <input id="email" name="email" type="email" placeholder="vous@exemple.fr" required />
+          </div>
+          <div class="form-group">
+            <label for="phone">Téléphone</label>
+            <input id="phone" name="phone" type="tel" placeholder="06 00 00 00 00" />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" placeholder="Parlez de votre besoin"></textarea>
+          </div>
+          <button class="btn btn--primary" type="submit">Envoyer le message</button>
+          <p class="form-disclaimer">En soumettant ce formulaire, vous acceptez d’être recontacté·e par e‑mail.</p>
+        </form>
+      </div>
     </section>
   </main>
-  <footer>
-    <p>&copy; 2024 Louann Cousseau</p>
+
+  <footer class="site-footer">
+    <div class="container footer__grid">
+      <div>
+        <strong>Nom du Cabinet</strong>
+        <p>Diététicien·ne — Nutritionniste</p>
+        <p>Numéro ADELI&nbsp;: 000000000</p>
+      </div>
+      <div>
+        <p>&copy; <span id="current-year"></span> Tous droits réservés.</p>
+        <a href="#">Mentions légales</a>
+      </div>
+      <div class="footer__socials">
+        <a href="#" aria-label="Instagram">Instagram</a>
+        <a href="#" aria-label="Facebook">Facebook</a>
+        <a href="#" aria-label="LinkedIn">LinkedIn</a>
+      </div>
+    </div>
   </footer>
-  <script src="script.js"></script>
+
+  <script src="script.js" defer></script>
 </body>
 </html>
