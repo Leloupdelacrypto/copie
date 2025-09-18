@@ -1,1 +1,262 @@
-<!-- v24 index.html -->
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>La Délicieuserie — Biscuiterie artisanale & personnalisée</title>
+  <meta name="description" content="Biscuiterie artisanale à Calais. Sablés personnalisés pour événements, cadeaux d’entreprise et attentions gourmandes.">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="icon" href="assets/favicon.png">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header class="site-header" id="accueil">
+  <div class="top-banner">
+    <div class="container">
+      <p>Biscuiterie artisanale • Personnalisation à la demande • Retrait & livraison</p>
+      <div class="top-banner__cta">
+        <a href="tel:+33617419761" class="top-link">06.17.41.97.61</a>
+        <a href="#contact" class="top-link">Commander</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container navbar" role="navigation" aria-label="Navigation principale">
+    <a class="brand" href="#accueil">
+      <img src="assets/logo.png" alt="Logo La Délicieuserie" />
+      <span>
+        <strong>La Délicieuserie</strong>
+        <small>Biscuiterie artisanale & personnalisée</small>
+      </span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="primary-menu" id="navToggle" aria-label="Ouvrir le menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="primary-menu" class="nav-links">
+      <a href="#accueil">Accueil</a>
+      <a href="#produits">Biscuits</a>
+      <a href="#personnalisation">Personnalisation</a>
+      <a href="#apropos">À propos</a>
+      <a href="#temoignages">Avis</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" role="presentation">
+  <div class="container hero__content">
+    <p class="hero__subtitle">Biscuiterie sur‑mesure</p>
+    <h1 class="hero__title">Sablés artisanaux <br/>à votre image</h1>
+    <p class="hero__text">Forme, taille, message, logo… nous personnalisons chaque biscuit pour vos événements, cadeaux d’entreprise et attentions gourmandes.</p>
+    <div class="hero__actions">
+      <a class="btn btn--lg btn--primary" href="#contact">Demander un devis</a>
+      <a class="btn btn--ghost" href="#produits">Découvrir Nos Sablés</a>
+    </div>
+  </div>
+</section>
+
+<main id="main">
+  <section class="highlights" aria-labelledby="highlights-title">
+    <div class="container">
+      <h2 id="highlights-title" class="section-title">Pourquoi choisir La Délicieuserie&nbsp;?</h2>
+      <div class="highlight-grid">
+        <article class="highlight-card">
+          <div class="highlight-icon" aria-hidden="true">🍪</div>
+          <h3>Artisanal & bio</h3>
+          <p>Ingrédients issus de l’agriculture biologique, fabrication à la main.</p>
+        </article>
+        <article class="highlight-card">
+          <div class="highlight-icon" aria-hidden="true">🎨</div>
+          <h3>100% personnalisable</h3>
+          <p>Forme, message, motif ou logo : créez un biscuit unique.</p>
+        </article>
+        <article class="highlight-card">
+          <div class="highlight-icon" aria-hidden="true">🚚</div>
+          <h3>Commandes pro & particuliers</h3>
+          <p>Pour mariages, naissances, anniversaires, cadeaux d’entreprise et événements.</p>
+        </article>
+      </div>
+    </div>
+  
+
+</div>
+</section>
+
+  <section id="produits" class="produits">
+  <div class="container">
+    <h2 class="section-title">Nos Sablés</h2>
+    <p class="section-subtitle">Deux univers : Professionnels & Particuliers</p>
+    <div class="carousels">
+      <section class="carousel" data-carousel="pros" aria-labelledby="carousel-pros-title">
+        <div class="carousel__head">
+          <h3 id="carousel-pros-title">Professionnels</h3>
+          <p class="carousel__subtitle">Logo comestible, coffrets, cadeaux d’affaires</p>
+        </div>
+        <div class="carousel__viewport">
+          <button class="carousel__control" data-dir="prev" aria-label="Précédent">&#10094;</button>
+          <div class="carousel__track">
+            <img src="assets/images/pros1.jpg" alt="Sablés logo entreprise 1" class="carousel__slide" />
+            <img src="assets/images/pros2.jpg" alt="Sablés logo entreprise 2" class="carousel__slide" />
+            <img src="assets/images/pros3.jpg" alt="Coffret sablés personnalisés entreprise" class="carousel__slide" />
+          </div>
+          <button class="carousel__control" data-dir="next" aria-label="Suivant">&#10095;</button>
+        </div>
+        <div class="carousel__dots" aria-label="Sélection d’image professionnels"></div>
+      </section>
+
+      <section class="carousel" data-carousel="particuliers" aria-labelledby="carousel-part-title">
+        <div class="carousel__head">
+          <h3 id="carousel-part-title">Particuliers</h3>
+          <p class="carousel__subtitle">Mariage, naissance, anniversaire</p>
+        </div>
+        <div class="carousel__viewport">
+          <button class="carousel__control" data-dir="prev" aria-label="Précédent">&#10094;</button>
+          <div class="carousel__track">
+            <img src="assets/images/part1.jpg" alt="Sablés personnalisés mariage" class="carousel__slide" />
+            <img src="assets/images/part2.jpg" alt="Sablés personnalisés anniversaire" class="carousel__slide" />
+            <img src="assets/images/part3.jpg" alt="Sablés personnalisés naissance" class="carousel__slide" />
+          </div>
+          <button class="carousel__control" data-dir="next" aria-label="Suivant">&#10095;</button>
+        </div>
+        <div class="carousel__dots" aria-label="Sélection d’image particuliers"></div>
+      </section>
+    </div>
+  </div>
+</section>
+
+  <section id="personnalisation" class="about">
+    <div class="container about__wrapper">
+      <div class="about__image"><img src="assets/images/personnalisation.jpg" alt="Personnalisation des biscuits"></div>
+      <div class="about__content">
+        <h2 class="section-title">Personnalisation</h2>
+        <p class="section-subtitle">Créez un biscuit qui vous ressemble</p>
+        <ul class="about__list">
+          <li>Choix de la <strong>forme</strong> et de la <strong>taille</strong></li>
+          <li>Ajout d’un <strong>prénom</strong>, <strong>message</strong> ou <strong>date</strong></li>
+          <li>Intégration d’un <strong>dessin</strong>, <strong>logo</strong> ou motif</li>
+        </ul>
+        <a class="btn btn--primary" href="#contact">Discuter de votre projet</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="apropos" class="about">
+    <div class="container about__wrapper">
+      <div class="about__image"><img src="assets/images/atelier.jpg" alt="Atelier biscuiterie artisanale"></div>
+      <div class="about__content">
+        <h2 class="section-title">À propos</h2>
+        <p class="section-subtitle">La Délicieuserie – Biscuiterie artisanale à Calais</p>
+        <p>Chaque sablé est façonné à la main, avec des ingrédients bio et une attention particulière portée aux détails. Notre ambition&nbsp;: allier gourmandise, esthétique et émotions.</p>
+        <p>Nous accompagnons particuliers et entreprises pour des créations uniques qui marquent les esprits.</p>
+        <a class="btn btn--ghost" href="#contact">Nous écrire</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container cta__wrapper">
+      <div>
+        <h2 class="section-title" style="color:#fff">Envie d’un devis rapide&nbsp;?</h2>
+        <p>Parlez‑nous de votre événement, vos quantités et votre personnalisation.</p>
+      </div>
+      <a class="btn btn--primary" href="mailto:contact@exemple.fr">Contact direct</a>
+    </div>
+  </section>
+
+  <section class="testimonials" id="temoignages" aria-labelledby="testimonials-title">
+    <div class="container">
+      <div class="section-intro">
+        <h2 id="testimonials-title" class="section-title">Ils en parlent</h2>
+        <p class="section-subtitle">Des retours qui nous motivent au quotidien</p>
+      </div>
+      <div class="testimonials__slider" role="region" aria-live="polite">
+        <button class="slider__control" data-direction="prev" aria-label="Témoignage précédent">&#10094;</button>
+        <div class="slider__track"><!-- slides injected by script.js (fbReviews) --></div>
+        <button class="slider__control" data-direction="next" aria-label="Témoignage suivant">&#10095;</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact" aria-labelledby="contact-title">
+    <div class="container contact__grid">
+      <div>
+        <h2 id="contact-title" class="section-title">Contact & informations</h2>
+        <p class="section-subtitle">Biscuiterie à Calais • Retrait & livraison</p>
+        <ul class="contact__list">
+<li>
+  <img src="assets/icons/facebook.svg" alt="Facebook" class="icon"> <a href="https://www.facebook.com/p/La-D%C3%A9licieuserie-61555204563313/" target="_blank" rel="noopener">Facebook</a>
+</li>
+          <li><span class="contact__icon" aria-hidden="true"><img src="assets/icons/phone.svg" alt=""></span> <a href="tel:+33617419761">06.17.41.97.61</a></li>
+          <li><span class="contact__icon" aria-hidden="true"><img src="assets/icons/mail.svg" alt=""></span> <a href="mailto:contact@exemple.fr">contact@exemple.fr</a></li>
+          
+          <li>
+            <span class="contact__icon" aria-hidden="true"><img src="assets/icons/instagram.svg" alt=""></span>
+            <a href="https://www.instagram.com/la_delicieuserie/" target="_blank" rel="noopener">Instagram</a>
+          </li>
+          <li>
+            <span class="contact__icon" aria-hidden="true"><img src="assets/icons/messenger.svg" alt=""></span>
+            <a href="https://www.messenger.com/t/188037521066732" target="_blank" rel="noopener">Messenger</a>
+          </li>
+          <li><span class="contact__icon" aria-hidden="true">📍</span> <span>Calais, France</span></li>
+                <li>
+            <span class="contact__icon" aria-hidden="true"><img src="assets/icons/linkedin.svg" alt="LinkedIn" class="icon"></span>
+            <a href="#" aria-label="LinkedIn">LinkedIn</a>
+        </li>
+</ul>
+        <p class="contact__info">Devis gratuit • Délais selon quantités • Emballages soignés</p>
+      </div>
+      <form class="contact__form" action="https://formspree.io/f/your-id" method="POST">
+        <input type="hidden" name="_subject" value="Nouveau message depuis La Délicieuserie">
+        <div class="form-group">
+          <label for="name">Nom complet</label>
+          <input id="name" name="name" type="text" placeholder="Votre nom" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Adresse e‑mail</label>
+          <input id="email" name="email" type="email" placeholder="vous@exemple.fr" required />
+        </div>
+        <div class="form-group">
+          <label for="phone">Téléphone</label>
+          <input id="phone" name="phone" type="tel" placeholder="" />
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4" placeholder="Parlez‑nous de votre projet (quantités, date, thèmes)"></textarea>
+        </div>
+        <button class="btn btn--primary" type="submit">Envoyer le message</button>
+        <p class="form-disclaimer">En soumettant ce formulaire, vous acceptez d’être recontacté·e par e‑mail.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer__grid">
+    <div>
+      <strong>La Délicieuserie</strong>
+      <p>Biscuiterie artisanale & personnalisée</p>
+    </div>
+    <div>
+      <p>&copy; <span id="current-year"></span> Tous droits réservés.</p>
+      <a href="#">Mentions légales</a>
+    </div>
+    <div class="footer__socials">
+      <a href="https://www.instagram.com/la_delicieuserie/" target="_blank" rel="noopener" aria-label="Instagram">Instagram</a>
+<a href="https://www.linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js" defer></script>
+
+<!-- Facebook SDK (nécessaire pour l'embed fb-page) --><script>
+document.addEventListener('DOMContentLoaded', function(){
+  if (window.FB && FB.XFBML && FB.XFBML.parse){ FB.XFBML.parse(); }
+});
+</script></body>
+
+
+</html>
