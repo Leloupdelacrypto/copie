@@ -272,3 +272,31 @@ const fbReviews = [
   window.addEventListener('resize', setPad);
   setTimeout(setPad, 300);
 })();
+
+// v23.9 twin-carousels
+(function(){
+  function wire(id){
+    const root = document.querySelector(id);
+    if(!root) return;
+    const track = root.querySelector('.ctrack');
+    const prev = root.querySelector('.cbtn.prev');
+    const next = root.querySelector('.cbtn.next');
+    let index=0;
+    function cardW(){
+      if(!track || !track.children.length) return 0;
+      const el = track.children[0];
+      const style = window.getComputedStyle(el);
+      const gap = 12;
+      return el.getBoundingClientRect().width + gap;
+    }
+    function go(dir){
+      if(!track) return;
+      const w = cardW();
+      track.scrollBy({left: dir*w, behavior: 'smooth'});
+    }
+    prev && prev.addEventListener('click', ()=>go(-1));
+    next && next.addEventListener('click', ()=>go(+1));
+  }
+  wire('#carousel-pro');
+  wire('#carousel-part');
+})();

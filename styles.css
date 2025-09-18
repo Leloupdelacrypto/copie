@@ -382,3 +382,20 @@ main{ padding-top: 128px; }
 /* Contact icons: remove any backgrounds completely */
 .contact__icon{ background: transparent !important; box-shadow: none !important; }
 .contact__list img.icon{ background: transparent !important; }
+
+/* v23.9 ensure header overlays hero and looks transparent */
+.navbar{ position:fixed !important; top:0; left:0; right:0; z-index:4000; background:rgba(251,250,247,.72); border-radius:0 0 18px 18px; -webkit-backdrop-filter: blur(10px) saturate(140%); backdrop-filter: blur(10px) saturate(140%); }
+.hero{ margin-top: 0 !important; }
+main{ padding-top: 136px !important; }
+@media (max-width:960px){ main{ padding-top: 108px !important; } }
+
+/* v23.9 twin carousels (Pro / Particuliers) */
+.sables-wrap{ margin-top:1.2rem; display:grid; gap:1rem; }
+.sables-wrap .sous-titre{ font-family: var(--font-heading); font-size:1.4rem; color: var(--color-primary-dark); margin: .5rem 0 .25rem; }
+.carousel{ position:relative; display:grid; grid-template-columns: 1fr auto; align-items:center; background:var(--color-surface); border-radius:16px; box-shadow: var(--shadow-soft); overflow:hidden; }
+.carousel .ctrack{ grid-column:1 / -1; display:flex; gap:12px; padding:12px; overflow:hidden; scroll-behavior:smooth; }
+.carousel img{ height:280px; width:auto; border-radius:12px; flex:0 0 auto; }
+.carousel .cbtn{ position:absolute; top:50%; transform:translateY(-50%); border:none; background:rgba(0,0,0,.35); color:#fff; width:40px; height:40px; border-radius:50%; cursor:pointer; z-index:2; }
+.carousel .cbtn.prev{ left:8px; }
+.carousel .cbtn.next{ right:8px; }
+@media (max-width:960px){ .carousel img{ height:220px; } }
