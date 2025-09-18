@@ -1,1 +1,12 @@
-<!-- Placeholder for styles.css after modifications -->
+body {font-family:sans-serif;margin:0;padding:0;}
+header {background:#fff;display:flex;justify-content:space-between;align-items:center;padding:1rem;}
+.brand img {height:60px;}
+nav a {margin:0 1rem;color:#3f6fa3;text-decoration:none;}
+h2 {color:#3f6fa3;}
+.carousel, .testimonial-carousel {overflow:hidden;position:relative;}
+.carousel__track, .testimonial-track {display:flex;transition:transform 0.5s ease;}
+.carousel__slide {min-width:100%;}
+.testimonial-track blockquote {min-width:100%;padding:2rem;box-sizing:border-box;}
+.testimonial-dots {text-align:center;margin-top:1rem;}
+.testimonial-dots button {width:10px;height:10px;border-radius:50%;border:none;margin:0 5px;background:#ccc;}
+.testimonial-dots button.active {background:#3f6fa3;}
