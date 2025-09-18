@@ -1,5 +1,6 @@
 
 :root{
+  --color-brand-orange:#F29E5C;
   --font-heading: "Playfair Display", serif;
   --font-body: "Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif;
   --color-primary: #6a9fd2;
@@ -186,7 +187,7 @@ a{color:inherit;text-decoration:none}
 .brand img{ height: 100%; width: auto; display: block; }
 
 /* --- Patch: boutons plus gros --- */
-.btn--lg{ font-size: 1.06rem; padding: 1rem 2.2rem; border-width: 2px; }
+.btn--lg{ font-size:1.12rem; padding:1.1rem 2.4rem; border-width:2px; }
 
 /* --- Patch: visibilité bouton 'Découvrir nos sablés' --- */
 .btn--prominent{ box-shadow: 0 14px 28px rgba(0,0,0,.12); transform: translateY(0); }
@@ -229,3 +230,13 @@ a{color:inherit;text-decoration:none}
     height: 240px;
   }
 }
+
+
+/* --- Patch v15: hide any rogue nav control inside hero (defensive) --- */
+.hero .slider__control,
+.hero .carousel__control{
+  display: none !important;
+}
+
+/* Orange title only for 'Nos sablés' section */
+.produits .section-title{ color: var(--color-brand-orange); }
