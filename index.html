@@ -200,11 +200,11 @@
           </li>
           <li><span class="contact__icon" aria-hidden="true">📍</span> <span>Calais, France</span></li>
                 <li>
-            <span class="contact__icon" aria-hidden="true">🔗</span>
+            <span class="contact__icon" aria-hidden="true"><img src="assets/icons/linkedin.svg" alt="LinkedIn" class="icon"></span>
             <a href="#" aria-label="LinkedIn">LinkedIn</a>
         </li>
         <li>
-            <span class="contact__icon" aria-hidden="true">📘</span>
+            <span class="contact__icon" aria-hidden="true"><img src="assets/icons/facebook.svg" alt="Facebook" class="icon"></span>
             <a href="https://www.facebook.com/p/La-D%C3%A9licieuserie-61555204563313/" aria-label="Facebook">Facebook</a>
         </li>
 </ul>
@@ -259,5 +259,12 @@
 <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v19.0"></script>
 
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  if (window.FB && FB.XFBML && FB.XFBML.parse){ FB.XFBML.parse(); }
+});
+</script>
 </body>
+
 </html>
