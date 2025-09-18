@@ -80,7 +80,25 @@
         </article>
       </div>
     </div>
-  </section>
+  
+<div class="fb-reviews container" aria-label="Avis Facebook">
+  <h3 class="fb-reviews__title">Avis Facebook</h3>
+  <div class="fb-page"
+       data-href="https://www.facebook.com/LaDelicieuserieCalais"
+       data-tabs="timeline"
+       data-small-header="false"
+       data-adapt-container-width="true"
+       data-hide-cover="false"
+       data-show-facepile="true">
+    <blockquote cite="https://www.facebook.com/LaDelicieuserieCalais" class="fb-xfbml-parse-ignore">
+      <a href="https://www.facebook.com/LaDelicieuserieCalais/reviews">La Délicieuserie</a>
+    </blockquote>
+  </div>
+  <p class="fb-reviews__cta">
+    <a target="_blank" rel="noopener" href="https://www.facebook.com/LaDelicieuserieCalais/reviews" class="btn btn--ghost btn--lg">Voir tous les avis</a>
+  </p>
+</div>
+</section>
 
   <section id="produits" class="produits">
   <div class="container">
@@ -265,6 +283,16 @@ document.addEventListener('DOMContentLoaded', function(){
   if (window.FB && FB.XFBML && FB.XFBML.parse){ FB.XFBML.parse(); }
 });
 </script>
+
+<script>
+  window.fbAsyncInit = function() {
+    if (window.FB) { FB.init({ xfbml: true, version: 'v19.0' }); }
+  };
+  document.addEventListener('DOMContentLoaded', function(){
+    if (window.FB && FB.XFBML && FB.XFBML.parse){ FB.XFBML.parse(); }
+  });
+</script>
 </body>
+
 
 </html>
