@@ -194,3 +194,38 @@ a{color:inherit;text-decoration:none}
 
 /* --- Patch: controls au-dessus des images --- */
 .carousel__control{ position:absolute; top:50%; transform:translateY(-50%); z-index:20; }
+
+
+/* --- Patch v14: 'Nos sablés' layout side-by-side on desktop, responsive on mobile/tablet --- */
+.carousels{
+  display:grid;
+  gap:2rem;
+}
+
+/* Tablet: try 2 columns when space allows, while keeping readability */
+@media (min-width: 720px){
+  .carousels{
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+  }
+}
+
+/* Desktop enhancements */
+@media (min-width: 1024px){
+  .carousels{
+    grid-template-columns: 1fr 1fr;
+  }
+  .carousel{
+    height:100%;
+  }
+  .carousel__slide{
+    height: 320px; /* a bit taller on desktop */
+  }
+}
+
+/* Small screens: keep single column and comfortable media size */
+@media (max-width: 719px){
+  .carousel__slide{
+    height: 240px;
+  }
+}

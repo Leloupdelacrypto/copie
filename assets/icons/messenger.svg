@@ -1,4 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true">
-  <path fill="#6a9fd2" d="M256 32C114.6 32 0 135.3 0 264c0 70.9 35.2 133.9 90.6 175.7V480l83-45.6c25.6 7.1 52.8 10.9 82.4 10.9 141.4 0 256-103.3 256-232S397.4 32 256 32z"/>
-  <path fill="#fff" d="M134.4 326.7l104.8-111.8c10-10.6 26.6-12.2 38.6-3.8l58.7 41.2 63.1-68.9c11.7-12.8 31.8-6 34.5 11l13.8 86.5c2.7 16.9-16.7 28.1-30.8 18.3l-58.7-41.2-63.1 68.9c-11.7 12.8-31.8 6-34.5-11l-13.8-86.5c-2.7-16.9-24.1-22.3-34.5-11L134.4 326.7z"/>
-</svg>
+<?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+<svg xmlns="http://www.w3.org/2000/svg"
+aria-label="Messenger" role="img"
+viewBox="0 0 512 512"><rect
+width="512" height="512"
+rx="15%"
+fill="#ffffff"/><linearGradient id="a" x1="256" x2="256" y1="78.2" y2="441.2" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#00B2FF"/><stop offset="1" stop-color="#006AFF"/></linearGradient><path fill="url(#a)" d="M256 78.2c-102.4 0-181.8 75 -181.8 176.4c0 53 21.7 98.8 57 130.4a14.7 14.7 0 015 10.4l1 32.3a14.6 14.6 0 0020.4 12.9l36-16a14.5 14.5 0 019.8-.7a197.8 197.8 0 0052.6 7c102.4 0 181.8-75 181.8 -176.3S358.4 78.2 256 78.2z"/><path fill="#ffffff" d="M146.8 306.1l53.4-84.7a27.3 27.3 0 0139.5-7.3l42.5 31.9a11 11 0 0013 0l57.5-43.6c7.6-5.8 17.6 3.4 12.5 11.5l-53.4 84.7a27.3 27.3 0 01-39.4 7.3L229.9 274a11 11 0 00-13.2 0l-57.4 43.6c-7.6 5.8-17.6 -3.4 -12.5 -11.5z"/></svg>
