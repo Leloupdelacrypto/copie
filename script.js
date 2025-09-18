@@ -216,3 +216,25 @@ document.querySelectorAll('.carousel').forEach((root) => {
   window.addEventListener('resize', update);
   update();
 });
+
+
+/* v22: Facebook reviews (manual list, copy/paste from public page) */
+const fbReviews = [
+  { name: "Camille", text: "Des sablés magnifiques et délicieux ! Service impeccable, je recommande à 100%." },
+  { name: "Thomas", text: "Personnalisation parfaite pour notre événement pro, invités conquis. Merci La Délicieuserie !" },
+  { name: "Julie", text: "Un vrai coup de cœur. Équipe à l’écoute et biscuits sublimes." },
+  { name: "Alexandre", text: "Livraison rapide, résultat au-delà de nos attentes. On repassera commande !" }
+];
+
+(function injectFacebookReviews(){
+  const track = document.querySelector('.testimonials .slider__track');
+  if (!track) return;
+  track.innerHTML = '';
+  fbReviews.forEach(({name, text}) => {
+    const fig = document.createElement('figure');
+    fig.className = 'testimonial';
+    fig.innerHTML = `<blockquote>“${text}”</blockquote><figcaption>${name} – Avis Facebook</figcaption>`;
+    track.appendChild(fig);
+  });
+})();
+
