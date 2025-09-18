@@ -1,13 +1,23 @@
-# Site Louann Cousseau Lookalike
 
-Version recréée du site avec images libres de droits (Unsplash).
+# La Délicieuserie — Site vitrine (v3, images locales)
 
-## Images utilisées (Unsplash, licence libre)
-- Hero : https://images.unsplash.com/photo-1556911073-52527ac43740?auto=format&fit=crop&w=1600&q=80
-- Portrait / À propos : https://images.unsplash.com/photo-1576765607922-136accf9136c?auto=format&fit=crop&w=800&q=80
-- Rééquilibrage alimentaire : https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80
-- Confort digestif : https://images.unsplash.com/photo-1511689989-c1a59ed89709?auto=format&fit=crop&w=1200&q=80
-- Sport & performance : https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=1200&q=80
-- Cabinet : https://images.unsplash.com/photo-1590086782793-3bbf2d2a6a67?auto=format&fit=crop&w=1200&q=80
+## Contenu
+- `index.html`, `styles.css`, `script.js`
+- `assets/logo.png`, `assets/favicon.png`
+- `assets/images/` : **placeholders** prêts à être remplacés
+  - `hero.jpg`, `produit1.jpg`, `produit2.jpg`, `produit3.jpg`, `produit4.jpg`, `atelier.jpg`, `personnalisation.jpg`, `contact.jpg`
 
-Toutes les images sont libres d’utilisation (licence [Unsplash](https://unsplash.com/license)).
+## Changer les images
+- Remplacez les fichiers dans `assets/images/` par vos photos (gardez les mêmes noms), **aucune modification de code nécessaire**.
+- Le **hero** est défini dans `styles.css` via :
+  ```css
+  .hero { background: linear-gradient(...), url("assets/images/hero.jpg") center/cover no-repeat; }
+  ```
+
+## Formulaire (Formspree)
+- Remplacez `https://formspree.io/f/your-id` dans `index.html` par votre endpoint Formspree.
+- Alternative Netlify Forms possible si vous migrez l'hébergement.
+
+## Optimisations mobile & tablette
+- Menu mobile collé à la barre (positionné via `.navbar` + `top: calc(100% + 8px)` et transition douce).
+- Sections compressées (marges, tailles d’images), CTA flex wrap, sliders scrollables.
