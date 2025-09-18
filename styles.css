@@ -280,22 +280,6 @@ section
 }
 
 
-/* --- v21: sticky navbar (logo + menu fixed at top on scroll) --- */
-.navbar{
-  position: sticky;
-  top: 0;
-  z-index: 999;
-  background: #fff;
-  border-radius: 0;
-  box-shadow: 0 4px 18px rgba(0,0,0,.06);
-}
-@media (max-width: 960px){
-  .navbar{
-    background: #fff;
-  }
-}
-
-
 /* --- v21: CTA contact direct orange in CTA section --- */
 .cta .btn[href^="mailto:"]{
   background: var(--color-brand-orange) !important;
@@ -312,24 +296,34 @@ section
 /* --- v21: ensure 'Nos Sablés' title is brand blue --- */
 section.produits .section-title{ color: var(--color-primary-dark) !important; }
 
-/* --- v22: fixed navbar and spacing --- */
-.navbar{
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 1000;
-  background: #fff;
-  box-shadow: 0 6px 18px rgba(0,0,0,.06);
-}
-@media (min-width: 961px){
-  main{ padding-top: 130px; }
-}
-@media (max-width: 960px){
-  main{ padding-top: 110px; }
-}
-
 /* v22: larger logo block */
 .navbar .brand{ height: 110px; padding-block: 0; }
 .navbar .brand img{ height: 100%; width: auto; display:block; }
 @media (max-width: 640px){
   .navbar .brand{ height: 88px; }
+}
+
+
+/* --- v23: fixed aesthetic navbar on site background --- */
+.navbar{
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1200;
+  background: var(--color-background);
+  backdrop-filter: saturate(140%) blur(6px);
+  -webkit-backdrop-filter: saturate(140%) blur(6px);
+  box-shadow: 0 6px 20px rgba(0,0,0,.06);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+.site-header{ padding-top: 0; }
+@media (min-width: 961px){
+  main{ padding-top: 140px; }
+}
+@media (max-width: 960px){
+  main{ padding-top: 120px; }
+}
+
+/* v23: ensure mobile dropdown positions under fixed bar */
+.navbar .nav-links{
+  top: calc(100% + 12px);
 }
