@@ -173,3 +173,46 @@ document.addEventListener('DOMContentLoaded', () => {
     update();
   });
 })();
+
+
+/* v16 carousel independence: safer width and scoping */
+document.querySelectorAll('.carousel').forEach((root) => {
+  const viewport = root.querySelector('.carousel__viewport');
+  const track = root.querySelector('.carousel__track');
+  const slides = track ? Array.from(track.querySelectorAll('.carousel__slide')) : [];
+  const prev = root.querySelector('[data-dir="prev"]');
+  const next = root.querySelector('[data-dir="next"]');
+  const dots = root.querySelector('.carousel__dots');
+  let index = 0;
+
+  function slideWidth(){
+    return viewport ? viewport.clientWidth : (slides[0]?.getBoundingClientRect().width || 0);
+  }
+  function update(){
+    if (!track || !slides.length) return;
+    track.style.transform = `translateX(-${index * slideWidth()}px)`;
+    if (dots){
+      [...dots.children].forEach((el,i)=> el.setAttribute('aria-current', i===index ? 'true':'false'));
+    }
+  }
+  function goto(i){
+    const last = slides.length - 1;
+    if (i < 0) index = last;
+    else if (i > last) index = 0;
+    else index = i;
+    update();
+  }
+  if (dots){
+    dots.innerHTML = '';
+    slides.forEach((_,i)=>{
+      const b = document.createElement('button');
+      b.setAttribute('aria-label', 'Aller à l’image '+(i+1));
+      b.addEventListener('click', ()=> goto(i));
+      dots.appendChild(b);
+    });
+  }
+  prev && prev.addEventListener('click', ()=> goto(index-1));
+  next && next.addEventListener('click', ()=> goto(index+1));
+  window.addEventListener('resize', update);
+  update();
+});

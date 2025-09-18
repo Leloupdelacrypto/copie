@@ -239,4 +239,14 @@ a{color:inherit;text-decoration:none}
 }
 
 /* Orange title only for 'Nos sablés' section */
-.produits .section-title{ color: var(--color-brand-orange); }
+.produits .section-title{ color: var(--color-accent) !important; }
+
+/* --- Patch v16: kill rogue arrows over hero & stacking contexts --- */
+.site-header, .hero{ position: relative; z-index: 2; }
+.testimonials, .produits{ position: relative; z-index: 1; }
+.site-header .slider__control,
+.site-header .carousel__control{ display: none !important; }
+
+/* Orange brand CTA */
+.btn--brand-orange{ background: var(--color-brand-orange); color:#fff; border:none; box-shadow:0 16px 30px rgba(242,158,92,.22); }
+.btn--brand-orange:hover, .btn--brand-orange:focus{ transform: translateY(-2px); box-shadow:0 22px 40px rgba(242,158,92,.28); }
