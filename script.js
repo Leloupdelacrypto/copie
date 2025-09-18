@@ -239,16 +239,36 @@ const fbReviews = [
 })();
 
 
-// v23.3-adjustMainPadding — ensure main content isn't hidden behind fixed navbar
+// v23.7-burger
+(function(){
+  const navToggle = document.querySelector('.nav-toggle');
+  const navLinks = document.querySelector('.navbar .nav-links');
+  function setPad(){
+    const nav = document.querySelector('.navbar');
+    const main = document.querySelector('main');
+    if (nav && main){ main.style.paddingTop = nav.getBoundingClientRect().height + 'px'; }
+  }
+  if (navToggle && navLinks){
+    navToggle.addEventListener('click',()=>{
+      const isOpen = navLinks.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+    window.addEventListener('resize',()=>{
+      if (window.innerWidth > 960){ navLinks.classList.remove('open'); navToggle.setAttribute('aria-expanded','false'); }
+      setPad();
+    });
+  }
+  window.addEventListener('load', setPad);
+  document.addEventListener('DOMContentLoaded', setPad);
+})();
+
+// v23.8-pad ensure main padding recalculates after fonts/images
 (function(){
   function setPad(){
-    var nav = document.querySelector('.site-header .navbar') || document.querySelector('.navbar');
-    var main = document.querySelector('main#main, main');
-    if (!nav || !main) return;
-    var h = nav.getBoundingClientRect().height;
-    main.style.paddingTop = (h + 10) + 'px';
+    var nav = document.querySelector('.navbar'); var main = document.querySelector('main');
+    if (nav && main){ main.style.paddingTop = Math.max( nav.getBoundingClientRect().height + 16, parseInt(getComputedStyle(main).paddingTop) ) + 'px'; }
   }
   window.addEventListener('load', setPad);
   window.addEventListener('resize', setPad);
-  document.addEventListener('DOMContentLoaded', setPad);
+  setTimeout(setPad, 300);
 })();
