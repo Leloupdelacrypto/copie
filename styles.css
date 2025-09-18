@@ -239,7 +239,7 @@ a{color:inherit;text-decoration:none}
 }
 
 /* Orange title only for 'Nos sablés' section */
-.produits .section-title{ color: var(--color-accent) !important; }
+.produits .section-title{ color: var(--color-primary-dark) !important; }
 
 /* --- Patch v16: kill rogue arrows over hero & stacking contexts --- */
 .site-header, .hero{ position: relative; z-index: 2; }
@@ -250,3 +250,10 @@ a{color:inherit;text-decoration:none}
 /* Orange brand CTA */
 .btn--brand-orange{ background: var(--color-brand-orange); color:#fff; border:none; box-shadow:0 16px 30px rgba(242,158,92,.22); }
 .btn--brand-orange:hover, .btn--brand-orange:focus{ transform: translateY(-2px); box-shadow:0 22px 40px rgba(242,158,92,.28); }
+
+
+/* --- Patch v18: style embed avis Facebook --- */
+.fb-reviews{ margin-top: 2rem; }
+.fb-reviews__title{ font-family: var(--font-heading); color: var(--color-primary-dark); margin-bottom: .75rem; }
+.fb-reviews__cta{ margin-top: 1rem; }
+.fb-page{ margin-inline:auto; }
