@@ -239,10 +239,10 @@ const fbReviews = [
 })();
 
 
-// v23-fix: adjust main padding-top to navbar height
+// v23.1 — Ajuste le padding-top du main en fonction de la barre fixe
 (function adjustMainPadding(){
   function setPad(){
-    var nav = document.querySelector('.site-header .navbar');
+    var nav = document.querySelector('.site-header .navbar') || document.querySelector('.navbar');
     var main = document.querySelector('main#main, main');
     if (!nav || !main) return;
     var h = nav.getBoundingClientRect().height;
