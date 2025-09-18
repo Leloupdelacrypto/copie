@@ -239,64 +239,16 @@ const fbReviews = [
 })();
 
 
-// v23.7-burger
-(function(){
-  const navToggle = document.querySelector('.nav-toggle');
-  const navLinks = document.querySelector('.navbar .nav-links');
-  function setPad(){
-    const nav = document.querySelector('.navbar');
-    const main = document.querySelector('main');
-    if (nav && main){ main.style.paddingTop = nav.getBoundingClientRect().height + 'px'; }
-  }
-  if (navToggle && navLinks){
-    navToggle.addEventListener('click',()=>{
-      const isOpen = navLinks.classList.toggle('open');
-      navToggle.setAttribute('aria-expanded', String(isOpen));
-    });
-    window.addEventListener('resize',()=>{
-      if (window.innerWidth > 960){ navLinks.classList.remove('open'); navToggle.setAttribute('aria-expanded','false'); }
-      setPad();
-    });
-  }
-  window.addEventListener('load', setPad);
-  document.addEventListener('DOMContentLoaded', setPad);
-})();
-
-// v23.8-pad ensure main padding recalculates after fonts/images
+// v23.3-adjustMainPadding — ensure main content isn't hidden behind fixed navbar
 (function(){
   function setPad(){
-    var nav = document.querySelector('.navbar'); var main = document.querySelector('main');
-    if (nav && main){ main.style.paddingTop = Math.max( nav.getBoundingClientRect().height + 16, parseInt(getComputedStyle(main).paddingTop) ) + 'px'; }
+    var nav = document.querySelector('.site-header .navbar') || document.querySelector('.navbar');
+    var main = document.querySelector('main#main, main');
+    if (!nav || !main) return;
+    var h = nav.getBoundingClientRect().height;
+    main.style.paddingTop = (h + 10) + 'px';
   }
   window.addEventListener('load', setPad);
   window.addEventListener('resize', setPad);
-  setTimeout(setPad, 300);
-})();
-
-// v23.9 twin-carousels
-(function(){
-  function wire(id){
-    const root = document.querySelector(id);
-    if(!root) return;
-    const track = root.querySelector('.ctrack');
-    const prev = root.querySelector('.cbtn.prev');
-    const next = root.querySelector('.cbtn.next');
-    let index=0;
-    function cardW(){
-      if(!track || !track.children.length) return 0;
-      const el = track.children[0];
-      const style = window.getComputedStyle(el);
-      const gap = 12;
-      return el.getBoundingClientRect().width + gap;
-    }
-    function go(dir){
-      if(!track) return;
-      const w = cardW();
-      track.scrollBy({left: dir*w, behavior: 'smooth'});
-    }
-    prev && prev.addEventListener('click', ()=>go(-1));
-    next && next.addEventListener('click', ()=>go(+1));
-  }
-  wire('#carousel-pro');
-  wire('#carousel-part');
+  document.addEventListener('DOMContentLoaded', setPad);
 })();

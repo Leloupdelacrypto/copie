@@ -41,7 +41,7 @@ a{color:inherit;text-decoration:none}
 .top-link::after{content:"→";font-size:.85em;transition:transform var(--transition)}
 .top-link:hover::after,.top-link:focus::after{transform:translateX(4px)}
 
-/* prev sticky removed */ .site-header{position:sticky;top:0;z-index:50;background:rgba(251,250,247,.92);backdrop-filter:saturate(130%) blur(6px)}
+.site-header{position:sticky;top:0;z-index:50;background:rgba(251,250,247,.92);backdrop-filter:saturate(130%) blur(6px)}
 .navbar{position:relative;display:flex;align-items:center;justify-content:space-between;padding:.75rem 0;gap:1rem}
 .brand{display:inline-flex;align-items:center;gap:.75rem;color:var(--color-primary-dark)}
 .brand img{width:48px;height:48px;object-fit:contain;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,.06)}
@@ -328,99 +328,73 @@ section.produits .section-title{ color: var(--color-primary-dark) !important; }
   top: calc(100% + 12px);
 }
 
-/* v23.7: fixed translucent header + burger layering + logo round */
-.navbar{
-  position: fixed !important;
-  top:0; left:0; right:0;
-  z-index: 3000;
-  background: rgba(251,250,247,0.75);
-  -webkit-backdrop-filter: blur(10px) saturate(140%);
-  backdrop-filter: blur(10px) saturate(140%);
-  border-bottom: 1px solid rgba(0,0,0,0.06);
-  border-radius: 0 0 16px 16px;
-}
-.brand img{ width: 92px; height: 92px; border-radius: 50%; object-fit: cover; box-shadow: 0 6px 16px rgba(0,0,0,.08); }
-@media (min-width: 961px){ main{ padding-top: 120px !important; } }
-@media (max-width: 960px){
-  main{ padding-top: 100px !important; }
-  .navbar .nav-links{
-    position: absolute; top: calc(100% + 12px); right: 12px;
-    z-index: 3100;
-    background: rgba(251,250,247,0.98);
-    -webkit-backdrop-filter: blur(12px) saturate(140%);
-    backdrop-filter: blur(12px) saturate(140%);
-    padding: 1rem 1.2rem; border-radius: var(--radius-md);
-    box-shadow: var(--shadow-soft);
-    transform: translateY(-8px); opacity: 0; visibility: hidden;
-    transition: transform var(--transition), opacity var(--transition), visibility var(--transition);
-    min-width: 240px;
-  }
-  .navbar .nav-links.open{ transform: translateY(0); opacity:1; visibility: visible; }
-  .nav-toggle{ display:flex; }
-}
-/* tighten spacing before highlights */
-.highlights{ padding-top: 2rem !important; margin-top: 0 !important; }
-
-/* v23.8 header + spacing */
-.navbar{
+/* ==== v23.3 header/menu fixes ==== */
+.site-header { position: relative; z-index: 10; }
+.site-header .navbar, .navbar{
   position: fixed !important;
   top: 0; left: 0; right: 0;
   z-index: 3000;
-  background: rgba(251,250,247,0.70);
+  background: rgba(248,246,241,0.62); /* site bg with transparency */
   -webkit-backdrop-filter: blur(10px) saturate(140%);
   backdrop-filter: blur(10px) saturate(140%);
-  border-radius: 0 0 18px 18px;
   border-bottom: 1px solid rgba(0,0,0,0.06);
+  border-radius: 0 0 16px 16px; /* rounded bottom corners */
+  box-shadow: 0 8px 22px rgba(0,0,0,.06);
 }
-/* Make sure hero is pushed down enough so header never hides it */
-main{ padding-top: 128px; }
-@media (max-width:960px){ main{ padding-top: 104px; } }
 
-/* Much tighter spacing before the highlights block */
-.highlights{ margin-top: .6rem !important; padding-top: .6rem !important; }
-
-/* Contact icons: remove any backgrounds completely */
-.contact__icon{ background: transparent !important; box-shadow: none !important; }
-.contact__list img.icon{ background: transparent !important; }
-
-/* v23.9 ensure header overlays hero and looks transparent */
-.navbar{ position:fixed !important; top:0; left:0; right:0; z-index:4000; background:rgba(251,250,247,.72); border-radius:0 0 18px 18px; -webkit-backdrop-filter: blur(10px) saturate(140%); backdrop-filter: blur(10px) saturate(140%); }
-.hero{ margin-top: 0 !important; }
-main{ padding-top: 136px !important; }
-@media (max-width:960px){ main{ padding-top: 108px !important; } }
-
-/* v23.9 twin carousels (Pro / Particuliers) */
-.sables-wrap{ margin-top:1.2rem; display:grid; gap:1rem; }
-.sables-wrap .sous-titre{ font-family: var(--font-heading); font-size:1.4rem; color: var(--color-primary-dark); margin: .5rem 0 .25rem; }
-.carousel{ position:relative; display:grid; grid-template-columns: 1fr auto; align-items:center; background:var(--color-surface); border-radius:16px; box-shadow: var(--shadow-soft); overflow:hidden; }
-.carousel .ctrack{ grid-column:1 / -1; display:flex; gap:12px; padding:12px; overflow:hidden; scroll-behavior:smooth; }
-.carousel img{ height:280px; width:auto; border-radius:12px; flex:0 0 auto; }
-.carousel .cbtn{ position:absolute; top:50%; transform:translateY(-50%); border:none; background:rgba(0,0,0,.35); color:#fff; width:40px; height:40px; border-radius:50%; cursor:pointer; z-index:2; }
-.carousel .cbtn.prev{ left:8px; }
-.carousel .cbtn.next{ right:8px; }
-@media (max-width:960px){ .carousel img{ height:220px; } }
-
-/* v23.10 header full-width glass + priority */
-.site-header{
-  position:fixed !important;
-  top:0; left:0; right:0;
-  z-index:4000 !important;
-  background: rgba(255,255,255,0.60) !important;
-  -webkit-backdrop-filter: blur(10px) saturate(140%);
-  backdrop-filter: blur(10px) saturate(140%);
-  border-radius: 0 0 18px 18px;
-  border-bottom: 1px solid rgba(0,0,0,0.06);
+/* Desktop: links inline INSIDE the bar */
+@media (min-width: 961px){
+  .navbar .nav-links{
+    position: static !important;
+    display: flex !important;
+    align-items: center;
+    gap: 1.5rem;
+    background: transparent !important;
+    box-shadow: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+  }
+  .nav-toggle{ display: none !important; }
+  /* Ensure layout has room under fixed bar */
+  main{ padding-top: 130px; }
 }
-/* Make nav bar content align inside but header glass spans full width */
-.site-header > .container{ padding-left: 16px; padding-right:16px; }
 
-/* ensure hero starts under header */
-main{ padding-top: 132px !important; }
-@media (max-width:960px){ main{ padding-top: 104px !important; } }
+/* Mobile: dropdown anchored under bar and ABOVE hero */
+@media (max-width: 960px){
+  main{ padding-top: 110px; }
+  .navbar .nav-links{
+    position: absolute;
+    top: calc(100% + 12px);
+    right: 16px;
+    z-index: 3100;
+    background: rgba(248,246,241,0.96);
+    -webkit-backdrop-filter: blur(12px) saturate(140%);
+    backdrop-filter: blur(12px) saturate(140%);
+    border-radius: 12px;
+    box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+    min-width: 240px;
+    opacity: 0; visibility: hidden; transform: scale(.98);
+    transition: .2s ease;
+  }
+  .navbar .nav-links.open{ opacity: 1; visibility: visible; transform: scale(1); }
+  .nav-toggle{ display: flex; }
+}
 
-/* nav menu (mobile) should appear over hero */
-#primary-menu{ z-index: 4200 !important; }
-.nav-toggle{ z-index: 4201 !important; }
+/* Make sure hero is under the bar */
+.hero{ position: relative; z-index: 0; }
 
-/* remove any side color bands from header background */
-body, header{ background: transparent; }
+/* Round logo inside circle */
+.brand img{
+  width: 84px; height: 84px;
+  border-radius: 50%;
+  object-fit: cover;
+  outline: 3px solid rgba(255,255,255,0.9);
+  outline-offset: 0;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+}
+
+/* Contact icons flat (no colored circle) */
+.contact__icon{ background: transparent !important; border-radius: 0 !important; width: auto; height: auto; margin: 0 .5rem 0 0; display: inline-flex; align-items: center; justify-content: center; }
+.contact__list img.icon{ width: 22px; height: 22px; margin-right: 8px; vertical-align: middle; display: inline-block; }
+.contact__list li{ display: flex; align-items: center; gap: .35rem; }
