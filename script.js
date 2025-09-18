@@ -239,8 +239,8 @@ const fbReviews = [
 })();
 
 
-// v23.1 — Ajuste le padding-top du main en fonction de la barre fixe
-(function adjustMainPadding(){
+// v23.3-adjustMainPadding — ensure main content isn't hidden behind fixed navbar
+(function(){
   function setPad(){
     var nav = document.querySelector('.site-header .navbar') || document.querySelector('.navbar');
     var main = document.querySelector('main#main, main');
