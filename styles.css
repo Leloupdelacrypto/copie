@@ -41,7 +41,7 @@ a{color:inherit;text-decoration:none}
 .top-link::after{content:"→";font-size:.85em;transition:transform var(--transition)}
 .top-link:hover::after,.top-link:focus::after{transform:translateX(4px)}
 
-.site-header{position:sticky;top:0;z-index:50;background:rgba(251,250,247,.92);backdrop-filter:saturate(130%) blur(6px)}
+/* prev sticky removed */ .site-header{position:sticky;top:0;z-index:50;background:rgba(251,250,247,.92);backdrop-filter:saturate(130%) blur(6px)}
 .navbar{position:relative;display:flex;align-items:center;justify-content:space-between;padding:.75rem 0;gap:1rem}
 .brand{display:inline-flex;align-items:center;gap:.75rem;color:var(--color-primary-dark)}
 .brand img{width:48px;height:48px;object-fit:contain;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,.06)}
@@ -399,3 +399,28 @@ main{ padding-top: 136px !important; }
 .carousel .cbtn.prev{ left:8px; }
 .carousel .cbtn.next{ right:8px; }
 @media (max-width:960px){ .carousel img{ height:220px; } }
+
+/* v23.10 header full-width glass + priority */
+.site-header{
+  position:fixed !important;
+  top:0; left:0; right:0;
+  z-index:4000 !important;
+  background: rgba(255,255,255,0.60) !important;
+  -webkit-backdrop-filter: blur(10px) saturate(140%);
+  backdrop-filter: blur(10px) saturate(140%);
+  border-radius: 0 0 18px 18px;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+/* Make nav bar content align inside but header glass spans full width */
+.site-header > .container{ padding-left: 16px; padding-right:16px; }
+
+/* ensure hero starts under header */
+main{ padding-top: 132px !important; }
+@media (max-width:960px){ main{ padding-top: 104px !important; } }
+
+/* nav menu (mobile) should appear over hero */
+#primary-menu{ z-index: 4200 !important; }
+.nav-toggle{ z-index: 4201 !important; }
+
+/* remove any side color bands from header background */
+body, header{ background: transparent; }
