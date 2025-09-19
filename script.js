@@ -253,30 +253,51 @@ const fbReviews = [
   document.addEventListener('DOMContentLoaded', setPad);
 })();
 
-/* v23.7 Lightbox */
+/* v27 fix — Lightbox init */
 document.addEventListener('DOMContentLoaded', function(){
   const lb = document.getElementById('lb');
-  if(!lb) return;
   const lbImg = document.getElementById('lbImg');
   const lbCap = document.getElementById('lbCap');
   const lbClose = document.getElementById('lbClose');
+  if (!lb || !lbImg) return;
 
   const imgs = document.querySelectorAll('#sables img, .sables img, .carousel img');
-  function open(src, alt){
-    lbImg.src = src; lbImg.alt = alt||''; lbCap.textContent = alt||'';
-    lb.classList.add('is-open'); document.body.style.overflow='hidden';
+  function openLB(src, alt){
+    lbImg.src = src; lbImg.alt = alt || '';
+    if (lbCap) lbCap.textContent = alt || '';
+    lb.classList.add('is-open');
+    document.documentElement.style.overflow = 'hidden';
+    lb.setAttribute('aria-hidden', 'false');
   }
-  function close(){
-    lb.classList.remove('is-open'); document.body.style.overflow='';
-    lbImg.src='';
+  function closeLB(){
+    lb.classList.remove('is-open');
+    document.documentElement.style.overflow = '';
+    lb.setAttribute('aria-hidden', 'true');
+    lbImg.src = '';
   }
 
-  imgs.forEach(img=>{
-    img.style.cursor='zoom-in';
-    img.addEventListener('click', ()=>open(img.src, img.alt));
+  imgs.forEach(img => {
+    const w = img.naturalWidth || img.width || 0;
+    const h = img.naturalHeight || img.height || 0;
+    if (w < 80 && h < 80) return;
+    img.style.cursor = 'zoom-in';
+    img.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      openLB(img.currentSrc || img.src, img.alt);
+    });
+    img.setAttribute('tabindex', '0');
+    img.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openLB(img.currentSrc || img.src, img.alt);
+      }
+    });
   });
 
-  lbClose.addEventListener('click', close);
-  lb.addEventListener('click', e=>{ if(e.target===lb) close(); });
-  document.addEventListener('keydown', e=>{ if(e.key==='Escape') close(); });
+  lb.addEventListener('click', (e) => { if (e.target === lb) closeLB(); });
+  if (lbClose) lbClose.addEventListener('click', closeLB);
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && lb.classList.contains('is-open')) closeLB();
+  });
 });
