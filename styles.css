@@ -440,7 +440,10 @@ section.produits .section-title{ color: var(--color-primary-dark) !important; }
 }
 .lb__close:hover { background: rgba(0,0,0,.6); }
 
-.accent-orange { color: var(--color-orange); font-weight:700; }
+.accent-orange{color:var(--color-orange);font-weight:700}
 
-#sables .slider__control,
-#sables .carousel__dots {display:none!important;}
+/* masquer flèches et marqueurs uniquement pour 'Nos sablés' */
+section[id*="sabl"] .slider__control,
+section[class*="sabl"] .slider__control,
+section[id*="sabl"] .carousel__dots,
+section[class*="sabl"] .carousel__dots{display:none!important}
