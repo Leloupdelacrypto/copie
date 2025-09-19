@@ -398,3 +398,48 @@ section.produits .section-title{ color: var(--color-primary-dark) !important; }
 .contact__icon{ background: transparent !important; border-radius: 0 !important; width: auto; height: auto; margin: 0 .5rem 0 0; display: inline-flex; align-items: center; justify-content: center; }
 .contact__list img.icon{ width: 22px; height: 22px; margin-right: 8px; vertical-align: middle; display: inline-block; }
 .contact__list li{ display: flex; align-items: center; gap: .35rem; }
+
+/* ===== v23.6 — Nos Sablés (harmonisation visuelle) ===== */
+.sables {
+  --card-radius: 18px;
+  --shadow-soft: 0 12px 28px rgba(0,0,0,.10);
+}
+.sables .carousel { position: relative; overflow: visible; padding-inline: clamp(8px, 2vw, 16px); }
+.sables .carousel__track { gap: clamp(12px, 2vw, 20px); align-items: stretch; }
+.sables .carousel__slide {
+  flex: 0 0 auto;
+  width: clamp(240px, 36vw, 360px);
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  background: var(--color-surface);
+  box-shadow: var(--shadow-soft);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.sables .carousel__slide:hover { transform: translateY(-4px); box-shadow: 0 16px 34px rgba(0,0,0,.12); }
+.sables .carousel__slide img {
+  display: block; width: 100%; height: 100%;
+  aspect-ratio: 4 / 3; object-fit: cover;
+}
+.sables .carousel__caption { padding: .9rem 1rem 1.1rem; color: var(--color-muted); font-size: .95rem; }
+.sables .carousel__control { background: rgba(255,255,255,.85); backdrop-filter: blur(6px); border: 1px solid rgba(0,0,0,.08); width: 44px; height: 44px; }
+@media (max-width: 640px){ .sables .carousel__slide { width: 82vw; } }
+
+/* ===== v23.6 — Lightbox (zoom image) ===== */
+.lb {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,.6);
+  -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px);
+  display: none; align-items: center; justify-content: center;
+  z-index: 4000; padding: clamp(12px, 3vw, 32px);
+}
+.lb.is-open { display: flex; }
+.lb__img { max-width: min(92vw, 1100px); max-height: 78vh; border-radius: 14px; box-shadow: 0 24px 60px rgba(0,0,0,.35); }
+.lb__cap { margin-top: .8rem; color: #fff; text-align: center; opacity: .9; }
+.lb__close {
+  position: absolute; top: 12px; right: 12px;
+  width: 42px; height: 42px; border-radius: 999px;
+  background: rgba(0,0,0,.45); color: #fff;
+  font-size: 28px; line-height: 42px; border: none; cursor: pointer;
+  backdrop-filter: blur(6px);
+}
+.lb__close:hover { background: rgba(0,0,0,.6); }

@@ -252,3 +252,36 @@ const fbReviews = [
   window.addEventListener('resize', setPad);
   document.addEventListener('DOMContentLoaded', setPad);
 })();
+
+/* ===== v23.6 — Lightbox pour Nos Sablés ===== */
+(function(){
+  const lb = document.getElementById('lb');
+  const lbImg = document.getElementById('lbImg');
+  const lbCap = document.getElementById('lbCap');
+  const lbClose = document.getElementById('lbClose');
+  if (!lb || !lbImg) return;
+  const imgs = document.querySelectorAll('.sables .carousel__slide img, #sables .carousel__slide img');
+  function openLB(src, alt){
+    lbImg.src = src; lbImg.alt = alt || ''; lbCap.textContent = alt || '';
+    lb.classList.add('is-open'); document.documentElement.style.overflow = 'hidden';
+    lb.setAttribute('aria-hidden', 'false');
+  }
+  function closeLB(){
+    lb.classList.remove('is-open'); document.documentElement.style.overflow = '';
+    lb.setAttribute('aria-hidden', 'true'); lbImg.src = '';
+  }
+  imgs.forEach(img => {
+    img.style.cursor = 'zoom-in';
+    img.setAttribute('tabindex', '0');
+    img.addEventListener('click', () => openLB(img.currentSrc || img.src, img.alt));
+    img.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLB(img.currentSrc || img.src, img.alt); }
+    });
+  });
+  lb.addEventListener('click', (e) => { if (e.target === lb) closeLB(); });
+  if (lbClose) lbClose.addEventListener('click', closeLB);
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && lb.classList.contains('is-open')) closeLB(); });
+  let startY = 0;
+  lb.addEventListener('touchstart', (e) => { startY = e.touches?.[0]?.clientY || 0; }, {passive:true});
+  lb.addEventListener('touchend', (e) => { const endY = e.changedTouches?.[0]?.clientY || 0; if (endY - startY > 60) closeLB(); }, {passive:true});
+})();
