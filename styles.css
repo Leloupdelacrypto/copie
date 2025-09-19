@@ -447,3 +447,24 @@ section.produits .section-title{ color: var(--color-primary-dark) !important; }
 
 /* v27p2: pas de flèches/points dans 'Nos sablés' */
 .carousels .carousel__control, .carousels .carousel__dots{display:none!important}
+
+/* v27p3 — corrections mobile */
+@media (max-width: 960px){
+  /* Lightbox: masquer toute légende potentielle sur mobile */
+  .lb__cap,
+  .lb figcaption,
+  .lb [class*="cap"],
+  .lb [data-lb-caption]{
+    display: none !important;
+  }
+
+  /* Nos sablés (carrousels) : supprimer flèches et marqueurs */
+  .carousels .carousel__control,
+  .carousels .slider__control,
+  .carousels [data-direction],
+  .carousels .carousel__dots,
+  .carousels .dots,
+  .carousels [class*="dot"]{
+    display: none !important;
+  }
+}
