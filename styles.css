@@ -442,8 +442,8 @@ section.produits .section-title{ color: var(--color-primary-dark) !important; }
 
 .accent-orange{color:var(--color-orange);font-weight:700}
 
-/* masquer flèches et marqueurs uniquement pour 'Nos sablés' */
-section[id*="sabl"] .slider__control,
-section[class*="sabl"] .slider__control,
-section[id*="sabl"] .carousel__dots,
-section[class*="sabl"] .carousel__dots{display:none!important}
+/* v27p2: masquer la légende dans la lightbox */
+.lb__cap{display:none!important}
+
+/* v27p2: pas de flèches/points dans 'Nos sablés' */
+.carousels .carousel__control, .carousels .carousel__dots{display:none!important}
